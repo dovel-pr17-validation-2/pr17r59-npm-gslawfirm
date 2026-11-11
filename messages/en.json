@@ -1,0 +1,327 @@
+{
+  "nav": {
+    "about": "About",
+    "practice": "Practice",
+    "approach": "Approach",
+    "contact": "Contact",
+    "consult": "Consult",
+    "resources": "Resources",
+    "menu": "Menu",
+    "close": "Close",
+    "primary": "Primary navigation",
+    "skip": "Skip to content"
+  },
+  "hero": {
+    "eyebrow": "GS Law Firm · Kondapur, Hyderabad",
+    "line1": "Criminal litigation",
+    "line2": "and bail in Hyderabad.",
+    "emphasis": "Direct counsel.",
+    "body": "FIR review, regular and anticipatory bail, and criminal court representation from Kondapur, Hyderabad. Speak directly with Adv. Aitha Sunitha.",
+    "cta": "Send a confidential enquiry",
+    "scroll": "Scroll ↓",
+    "footRole": "Adv. Aitha Sunitha (Sunitha Sindhole) · Direct consultation",
+    "bail": "Bail applications",
+    "criminal": "Criminal litigation"
+  },
+  "intro": {
+    "tag": "Introduction",
+    "body": "Based in Kondapur, Hyderabad, GS Law Firm handles criminal litigation and bail applications with the same advocate from file review to court appearance. Civil, property, commercial and succession matters remain part of the practice."
+  },
+  "practice": {
+    "eyebrow": "Practice",
+    "heading": "Areas\nof work",
+    "lede": "All areas, one advocate. Each matter receives the same attention from first hearing to final order: no handing off, no rotating juniors, no surprises on counsel.",
+    "learnMore": "Learn more"
+  },
+  "homeFaqs": {
+    "eyebrow": "Search questions",
+    "heading": "Questions behind the first search.",
+    "lede": "Practical questions about criminal cases, bail and arranging a first consultation. These are general answers; the documents and facts determine the available step.",
+    "items": {
+      "contract": {
+        "question": "What can a contract lawyer review for a Hyderabad business?",
+        "answer": "A contract review can examine the parties, obligations, payment terms, termination, liability, dispute clauses and signature requirements. The useful scope depends on the draft, the transaction and any earlier correspondence."
+      },
+      "business": {
+        "question": "When should a small business speak with a business lawyer?",
+        "answer": "Common starting points include vendor or service agreements, founder and shareholder papers, employment or contractor terms, unpaid invoices, notices and commercial disputes. The documents and current stage determine what can be discussed."
+      },
+      "criminal": {
+        "question": "How does GS Law Firm approach criminal-defense or drink-driving enquiries?",
+        "answer": "An initial review may begin with the FIR or complaint, notice or challan, bail or remand papers, testing or medical material, and the next police or court date. The available step depends on the record and procedural stage."
+      },
+      "nearby": {
+        "question": "Is GS Law Firm near Kondapur and Gachibowli for in-person consultation?",
+        "answer": "The office is in Sri Ramnagar, Kondapur, and serves Gachibowli and nearby Hyderabad localities. Appointments are preferred; a first conversation can also begin by phone or video after a brief enquiry."
+      },
+      "bail": {
+        "question": "What should I bring for a bail enquiry in Hyderabad?",
+        "answer": "Bring the FIR or complaint, arrest and remand papers, previous bail orders and the next court date. Say whether an arrest has happened or is anticipated. The appropriate application depends on the allegations and stage."
+      }
+    }
+  },
+  "approach": {
+    "eyebrow": "Approach",
+    "heading": "Three things we hold to.",
+    "lede": "The razorbill, our quiet emblem, returns to the same cliff colony year after year. We borrow the metaphor with intent: continuity is the point.",
+    "items": {
+      "personal": {
+        "title": "Personal counsel",
+        "body": "Your file is mine end to end. The same advocate who reads your brief is the one who argues your matter, and the one you call afterwards."
+      },
+      "discreet": {
+        "title": "Discreet representation",
+        "body": "Most clients arrive at a difficult chapter. We keep the room small, the calls measured, and the documentation tight."
+      },
+      "continuity": {
+        "title": "Continuity beyond the verdict",
+        "body": "A judgment is rarely the last page. We stay on for execution, appeals, and the quieter matters that follow."
+      }
+    },
+    "continuityExplainer": {
+      "label": "Continuity of counsel",
+      "body": "The same advocate remains involved in reading the papers, hearing preparation, client communication and later court stages.",
+      "link": "Read the explainer"
+    }
+  },
+  "founder": {
+    "eyebrow": "Counsel",
+    "portraitTag": "Advocate · Hyderabad",
+    "meta": {
+      "barCouncil": "Bar Council",
+      "education": "Education",
+      "languages": "Languages",
+      "profile": "Profile"
+    },
+    "sole": "Sole advocate",
+    "enrolment": "Enrolled with the Bar Council of Telangana",
+    "languages": "English · Telugu · Hindi",
+    "bio": [
+      "Over ten years of criminal and civil practice in Hyderabad, with periodic appearances before the High Court of Telangana. Graduate of Padala Ram Reddy College of Law.",
+      "Founded GS Law Firm in 2023 to keep the same advocate involved in reading the file, court preparation and client communication."
+    ]
+  },
+  "location": {
+    "eyebrow": "Visit",
+    "heading": "Kondapur, Hyderabad",
+    "phone": "Phone",
+    "email": "Email",
+    "hours": "Hours",
+    "pinLabel": "GS Law Firm · Sri Ramnagar",
+    "served": "Serving Kondapur, Gachibowli and nearby Hyderabad localities.",
+    "locationLink": "Read about Kondapur legal services",
+    "areas": "Nearby areas served",
+    "mapTitle": "GS Law Firm office location on Google Maps",
+    "officeHours": "Mon–Sat · 10:00–18:00 IST",
+    "directions": "Get office directions"
+  },
+  "contact": {
+    "eyebrow": "Enquire",
+    "heading": "Send a brief note.",
+    "lede": "Tell us, in a few sentences, what you’re dealing with. We respond within one working day, usually the same day.",
+    "fields": {
+      "name": "Name",
+      "namePh": "Your full name",
+      "phone": "Phone",
+      "phonePh": "+91",
+      "email": "Email",
+      "emailPh": "you@example.com",
+      "message": "Brief message",
+      "messagePh": "Name, locality, matter type, current stage, and any known deadline. Nothing confidential yet."
+    },
+    "submit": "Send enquiry",
+    "disclaim": "Submitting this form does not create an attorney–client relationship. Nothing herein constitutes legal advice.",
+    "success": {
+      "title": "Note received.",
+      "body": "We’ll reach out within one working day. For urgent matters, call +91 99638 47704."
+    },
+    "errors": {
+      "generic": "Something went wrong. Please call +91 99638 47704 or write to sunitha@sindhole.com.",
+      "rateLimit": "You’ve sent several enquiries recently. Please try again in an hour.",
+      "challenge": "We couldn’t verify this submission. Please refresh the page and try again, or call +91 99638 47704."
+    },
+    "security": "Completing security check…",
+    "validation": {
+      "name": "Enter your name (2–80 characters).",
+      "phone": "Enter a valid Indian mobile number.",
+      "email": "Enter a valid email address.",
+      "message": "Enter a message of 10–2000 characters."
+    }
+  },
+  "about": {
+    "eyebrow": "About · GS Law Firm",
+    "heading": "A small Hyderabad legal practice, kept small on purpose.",
+    "symbol": {
+      "eyebrow": "On the mark",
+      "heading": "The razorbill returns to the same cliff colony year after year, mating for life, hewing close to family.",
+      "body1": "It is a quiet bird, not a striking one. It does not announce itself. It is, however, reliable in a way that few seabirds are.",
+      "body2": "We took the metaphor on purpose. The work of a small law practice, done well, is the work of returning, to the same client, the same court, the same files, with the same attention as the first day."
+    },
+    "story": {
+      "label": "Founding · 2023",
+      "p1": "The firm opened its doors in 2023 in Kondapur, Hyderabad. The premise was unfashionable: one advocate, working on one file at a time, available for as long as the matter lasts, and where the relationship calls for it, well beyond.",
+      "p2": "Adv. Aitha Sunitha spent more than a decade in the trenches of criminal and civil practice before founding the firm. The decision to go out alone was not made lightly. It was made because, in her view, the larger the room a client's file passes through, the more often something quiet but important gets lost in the crossing.",
+      "p3": "The firm takes a small number of matters at any one time. It is not a question of preference; it is a question of mathematics. There is one set of hands on every file, and those hands have a finite week.",
+      "p4": "This site exists to make finding us straightforward. It is not a billboard. We have no rankings to claim and no testimonials to print. What we have is the willingness to sit with you and decide, plainly, whether we are the right firm for what you are dealing with."
+    }
+  },
+  "contactPage": {
+    "eyebrow": "Contact · GS Law Firm",
+    "heading": "Contact GS Law Firm in Kondapur, Hyderabad.",
+    "lede": "We answer the phone between 10 and 18 IST, Monday through Saturday. Outside those hours, the form and WhatsApp are read first thing the next working day.",
+    "firstMessage": {
+      "eyebrow": "Before you write · 01",
+      "heading": "What to include in your first message.",
+      "lede": "A short, factual note helps us decide whether we can take the matter and what to ask next. Keep the first message free of confidential detail.",
+      "items": [
+        "Your name and a reachable phone number",
+        "City or locality (for example Kondapur, Gachibowli, Hyderabad)",
+        "Type of matter in one line: bail, notice, property, cheque, cyber crime, contract, succession",
+        "Current stage: FIR filed, notice received, next hearing date, or still deciding",
+        "Any hard deadline you already know (limitation, court date, reply period)"
+      ],
+      "whatsappLabel": "WhatsApp opener",
+      "whatsappSample": "Hello. I am [Name] in [Locality]. The matter is [type]. Stage: [FIR / notice / hearing date / undecided]. Please advise a convenient time to speak.",
+      "whatsappCta": "Open WhatsApp with this starter",
+      "emailLabel": "Email opener",
+      "emailSample": "Subject: Enquiry · [matter type] · [locality]. Body: name, phone, one-line matter type, current stage, and any known deadline. No confidential documents in the first mail.",
+      "emailSubject": "Enquiry · legal matter · Hyderabad",
+      "emailBody": "Hello,\n\nMy name is [Name]. I am writing from [Locality / Hyderabad].\n\nMatter type: [bail / notice / property / cheque / cyber crime / contract / succession]\nCurrent stage: [FIR filed / notice received / next hearing date / still deciding]\nKnown deadline (if any): [date or none]\nPhone: [number]\n\nI have not attached confidential documents. Please let me know a convenient time to speak.\n\nThank you.",
+      "emailCta": "Open email with this starter",
+      "privacyNote": "Do not send Aadhaar copies, full bank statements, privileged correspondence, or settlement drafts in the first message. We will open a secure channel if the firm can assist."
+    },
+    "phone": {
+      "label": "By Phone · 02",
+      "note": "Direct to the advocate, not a desk. If we don’t pick up, we are in court. Leave a message and we will return your call by close of business."
+    },
+    "email": {
+      "label": "By Email · 03",
+      "note": "For longer enquiries or sharing documents. Please do not send anything confidential or privileged in the first message. We will reply with a secure channel."
+    },
+    "inPerson": {
+      "label": "In Person · 04",
+      "locality": "Kondapur, Hyderabad, Telangana, India",
+      "note": "Appointments preferred. Most consults can be done by phone or video first."
+    }
+  },
+  "privacy": {
+    "eyebrow": "Privacy · GS Law Firm",
+    "heading": "Privacy notice for GS Law Firm in Hyderabad.",
+    "updated": "Last updated · 26 July 2026",
+    "lede": "This notice describes what we collect when you visit this site or send us a message, why we collect it, and what we do with it.",
+    "sections": {
+      "collect": {
+        "heading": "What we collect",
+        "body": "When you submit the contact form, we collect the name, phone number, email address and message you provide. Server logs may record your IP address, browser user agent and the time of the request. We do not use third-party advertising cookies. Privacy-respecting analytics count visits and record only the contact channel, site language and source page when you choose Call, WhatsApp or Email, or when the form is accepted. No personal profile is built."
+      },
+      "use": {
+        "heading": "How we use it",
+        "body": "Enquiry data is used solely to respond to your enquiry and, where you become a client, to discharge our professional obligations. We do not sell, rent or share enquiry data with any third party for marketing. Aggregated, anonymous visit and contact-choice counts may be referenced internally to improve the site."
+      },
+      "retention": {
+        "heading": "How long we keep it",
+        "body": "Unresolved enquiries are retained for up to 90 days, after which they are deleted. Where an attorney–client relationship is formed, file retention follows the rules of the Bar Council of India and applicable law, typically seven years from the close of the matter."
+      },
+      "rights": {
+        "heading": "Your rights",
+        "body": "You may ask us to confirm what information we hold about you, to correct it, or to delete it. Where the law allows deletion, we will action the request within thirty days. Write to sunitha@sindhole.com to make any such request."
+      },
+      "contact": {
+        "heading": "Questions",
+        "body": "If anything in this notice is unclear, write to sunitha@sindhole.com and we will respond within one working day."
+      }
+    }
+  },
+  "disclaimerPage": {
+    "eyebrow": "Bar Council of India · Notice",
+    "heading": "Website disclaimer for GS Law Firm in Hyderabad.",
+    "updated": "In effect · 28 May 2026",
+    "lede": "This page keeps the formal Bar Council notice and explains, in plain language, why the site shows it before you enter.",
+    "formal": {
+      "heading": "Formal notice"
+    },
+    "p1": "The Bar Council of India does not permit advocates to solicit work or advertise. By entering this site, the user acknowledges that they are seeking information about GS Law Firm of their own accord and that no part of this site constitutes advertisement, personal communication, solicitation, invitation or inducement of any sort whatsoever from the firm or any of its members.",
+    "p2": "The information provided on this site is for general informational purposes only and should not be construed as legal advice or a substitute for it. GS Law Firm does not assume any responsibility for the consequences of any action taken on the basis of information provided herein. No attorney–client relationship is created by accessing this site or by sending a message through it.",
+    "p3": "By proceeding further, the user agrees to release, discharge and hold GS Law Firm harmless from any claim arising out of the use of any information available on this site.",
+    "p4": "Any reference to a specific area of law on this site is general in nature and not exhaustive. Outcomes in legal matters depend on the facts of each case, the applicable law, and the court before which the matter is heard. No representation, warranty or undertaking is made or implied that any particular result will be obtained.",
+    "p5": "If you do not agree with any part of this notice, please leave the site. If you require legal advice on a specific matter, we encourage you to call us on +91 99638 47704 or to write to sunitha@sindhole.com. A privileged channel will then be opened with you on that matter.",
+    "explainer": {
+      "why": {
+        "heading": "Why this notice appears",
+        "body": "Indian advocates are not permitted to advertise or solicit work. The notice records that you came to the site on your own and that the website is only making public information available."
+      },
+      "site": {
+        "heading": "What this website can explain",
+        "body": "The site can describe the firm, the advocate, the office location, practice areas, contact options and general legal process context. It can help you decide whether to send a first enquiry."
+      },
+      "limits": {
+        "heading": "What the website cannot decide",
+        "body": "The site cannot assess your documents, choose a legal step, predict an outcome, confirm limitation, check conflicts, or say whether the firm can act for you. Those questions need a confidential discussion and the relevant papers."
+      },
+      "enquiry": {
+        "heading": "Where an enquiry fits",
+        "body": "A first enquiry is a request to discuss the matter. It is not legal advice by itself and does not create an advocate-client relationship unless the firm accepts the matter after the necessary checks."
+      }
+    },
+    "actions": {
+      "contact": "Send a confidential enquiry",
+      "privacy": "Read the privacy notice"
+    }
+  },
+  "practiceIndex": {
+    "eyebrow": "Practice · GS Law Firm",
+    "heading": "Legal practice areas in Hyderabad.",
+    "lede": "Criminal, civil, property, commercial, succession, and High Court matters are handled by one advocate. Each matter receives the same attention from first hearing to final order: no handing off, no rotating juniors, no surprises on counsel.",
+    "footnote": "Don’t see your matter listed? Many cases sit between two areas. Send a brief note and we’ll tell you whether we are the right firm for it."
+  },
+  "practiceDetail": {
+    "crumbHome": "Home",
+    "crumbPractice": "Practice",
+    "handleHeading": "What we handle",
+    "cta": {
+      "headingPrefix": "Discuss your",
+      "headingSuffix": "matter in confidence.",
+      "body": "A first conversation, by phone or in office, with no obligation.",
+      "action": "Request a consultation"
+    },
+    "adjacent": "Adjacent areas",
+    "footer": "Every matter is taken on after a frank first conversation. We tell you, plainly, whether we are the right firm for it, and where to look if we are not."
+  },
+  "footer": {
+    "blurb": "A solo-advocate practice in Kondapur, Hyderabad. Founded 2023.",
+    "columns": {
+      "practice": "Practice",
+      "firm": "Firm",
+      "office": "Office"
+    },
+    "links": {
+      "about": "About",
+      "approach": "Continuity of counsel",
+      "contact": "Contact",
+      "disclaimer": "Disclaimer",
+      "linkedin": "LinkedIn ↗",
+      "resources": "Resources",
+      "statistics": "Legal statistics"
+    },
+    "disclaim": "As per the rules of the Bar Council of India, advocates are not permitted to solicit work or advertise. The contents of this site are for informational purposes only and do not constitute legal advice or create any attorney–client relationship.",
+    "officeHours": "Mon–Sat · 10:00–18:00 IST",
+    "credit": "Made by Praneel S"
+  },
+  "disclaimer": {
+    "noticeEyebrow": "Bar Council of India · Notice",
+    "heading": "Disclaimer.",
+    "body1": "The Bar Council of India does not permit advertisement or solicitation by Advocates in any form. By proceeding further and clicking ‘I Agree’, the user acknowledges the following: (1) there has been no advertisement, personal communication, solicitation, invitation or inducement of any sort whatsoever from GS Law Firm or any of its members to solicit any work through this website; (2) the user wishes to gain more information about GS Law Firm for his/her own information and use; (3) the information provided on this website is solely available at the user’s request for informational purposes only.",
+    "body2": "(4) no material/information provided on this website should be construed as legal advice; (5) GS Law Firm shall not be liable for consequences of any action taken by relying on the material/information provided on this website.",
+    "agree": "I Agree",
+    "exit": "Exit"
+  },
+  "wa": {
+    "label": "Chat on WhatsApp",
+    "prefilled": "Hello. I am [Name] in [Locality]. The matter is [type: bail / notice / property / cheque / cyber crime / contract / succession]. Stage: [FIR / notice / hearing date / undecided]. Please advise a convenient time to speak."
+  },
+  "contactActions": {
+    "label": "Contact the firm about this matter",
+    "enquire": "Discuss your matter",
+    "call": "Call the firm"
+  }
+}

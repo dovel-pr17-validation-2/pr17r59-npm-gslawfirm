@@ -1,0 +1,833 @@
+import type { Metadata } from "next";
+
+import { routing, type Locale } from "@/i18n/routing";
+import { pageMetadata } from "@/lib/seo";
+import { firm } from "@/content/firm";
+import type { PracticeSlug } from "@/content/practice-areas";
+
+type MetadataCopy = {
+  title: string;
+  description: string;
+};
+
+type MetadataEntry = {
+  path: string;
+  copy: Record<Locale, MetadataCopy>;
+};
+
+const localizedMetadata = {
+  home: {
+    path: "/",
+    copy: {
+      en: {
+        title: "Criminal & Bail Advocate in Kondapur, Hyderabad | GS Law Firm",
+        description:
+          "Criminal litigation, regular and anticipatory bail in Kondapur, Hyderabad. Contact Adv. Aitha Sunitha for FIR review, court representation and enquiries.",
+      },
+      hi: {
+        title: "आपराधिक और ज़मानत वकील | GS Law Firm कोंडापुर हैदराबाद",
+        description:
+          "कोंडापुर, हैदराबाद में आपराधिक मुकदमे, नियमित और अग्रिम ज़मानत। प्राथमिकी की समीक्षा और अदालत में पैरवी के लिए एडवोकेट ऐथा सुनीता से संपर्क करें।",
+      },
+      te: {
+        title: "కొండాపూర్‌లో క్రిమినల్, బెయిల్ | GS Law Firm హైదరాబాద్",
+        description:
+          "కొండాపూర్, హైదరాబాద్‌లో క్రిమినల్ వ్యాజ్యాలు, రెగ్యులర్, ముందస్తు బెయిల్. ఎఫ్‌ఐఆర్ సమీక్ష, కోర్టు ప్రాతినిధ్యానికి అడ్వకేట్ ఐతా సునీతను సంప్రదించండి.",
+      },
+    },
+  },
+  practice: {
+    path: "/practice",
+    copy: {
+      en: {
+        title: `Legal Practice Areas in Hyderabad | ${firm.name}`,
+        description:
+          "Criminal, civil, property, commercial, succession and High Court practice areas at GS Law Firm in Kondapur, Hyderabad.",
+      },
+      hi: {
+        title: `हैदराबाद में कानूनी प्रैक्टिस क्षेत्र | ${firm.name}`,
+        description:
+          "GS Law Firm, कोंडापुर हैदराबाद में आपराधिक, दीवानी, संपत्ति, वाणिज्यिक, उत्तराधिकार और हाई कोर्ट मामलों की जानकारी.",
+      },
+      te: {
+        title: `హైదరాబాద్‌లో న్యాయ ప్రాక్టీస్ రంగాలు | ${firm.name}`,
+        description:
+          "GS Law Firm, కొండాపూర్ హైదరాబాద్‌లో క్రిమినల్, సివిల్, ఆస్తి, వాణిజ్య, వారసత్వ మరియు హైకోర్టు విషయాల సమాచారం.",
+      },
+    },
+  },
+  practiceCriminal: {
+    path: "/practice/criminal",
+    copy: {
+      en: {
+        title: `Criminal Litigation in Hyderabad | ${firm.name}`,
+        description:
+          "Criminal-litigation information for bail, anticipatory bail, FIRs, trials, appeals and criminal-court stages in Hyderabad.",
+      },
+      hi: {
+        title: `हैदराबाद में आपराधिक मुकदमे | ${firm.name}`,
+        description:
+          "ज़मानत, अग्रिम ज़मानत, FIR, ट्रायल, अपील और आपराधिक अदालत के चरणों पर GS Law Firm, कोंडापुर हैदराबाद की जानकारी.",
+      },
+      te: {
+        title: `హైదరాబాద్‌లో క్రిమినల్ లిటిగేషన్ | ${firm.name}`,
+        description:
+          "బెయిల్, ముందస్తు బెయిల్, FIR, ట్రయల్, అప్పీలు మరియు క్రిమినల్ కోర్టు దశలపై GS Law Firm, కొండాపూర్ హైదరాబాద్ సమాచారం.",
+      },
+    },
+  },
+  practiceCivil: {
+    path: "/practice/civil",
+    copy: {
+      en: {
+        title: `Civil and Property Disputes in Hyderabad | ${firm.name}`,
+        description:
+          "Civil and property-dispute information for title, tenancy, contract, consumer, injunction and court-stage questions in Hyderabad.",
+      },
+      hi: {
+        title: `हैदराबाद में दीवानी और संपत्ति विवाद | ${firm.name}`,
+        description:
+          "टाइटल, किरायेदारी, contract, consumer, injunction और दीवानी अदालत के चरणों पर GS Law Firm, कोंडापुर हैदराबाद की जानकारी.",
+      },
+      te: {
+        title: `హైదరాబాద్‌లో సివిల్ మరియు ఆస్తి వివాదాలు | ${firm.name}`,
+        description:
+          "టైటిల్, అద్దె, contract, consumer, injunction మరియు సివిల్ కోర్టు దశలపై GS Law Firm, కొండాపూర్ హైదరాబాద్ సమాచారం.",
+      },
+    },
+  },
+  practiceCorporate: {
+    path: "/practice/corporate",
+    copy: {
+      en: {
+        title: `Corporate and Commercial Matters in Hyderabad | ${firm.name}`,
+        description:
+          "Corporate and commercial information for contracts, compliance, shareholder matters, vendor documents and small-business disputes in Hyderabad.",
+      },
+      hi: {
+        title: `हैदराबाद में कॉर्पोरेट और वाणिज्यिक मामले | ${firm.name}`,
+        description:
+          "contracts, compliance, shareholder matters, vendor documents और छोटे व्यवसाय विवादों पर GS Law Firm, कोंडापुर हैदराबाद की जानकारी.",
+      },
+      te: {
+        title: `హైదరాబాద్‌లో కార్పొరేట్ మరియు వాణిజ్య విషయాలు | ${firm.name}`,
+        description:
+          "contracts, compliance, shareholder matters, vendor documents మరియు చిన్న వ్యాపార వివాదాలపై GS Law Firm, కొండాపూర్ హైదరాబాద్ సమాచారం.",
+      },
+    },
+  },
+  practiceWillSuccession: {
+    path: "/practice/will-succession",
+    copy: {
+      en: {
+        title: `Wills, Trusts and Succession in Hyderabad | ${firm.name}`,
+        description:
+          "Will, probate, letters of administration, succession-certificate, inheritance-dispute and family-settlement information in Hyderabad.",
+      },
+      hi: {
+        title: `हैदराबाद में वसीयत, ट्रस्ट और उत्तराधिकार | ${firm.name}`,
+        description:
+          "वसीयत, probate, letters of administration, succession certificate, विरासत विवाद और family settlement पर हैदराबाद की जानकारी.",
+      },
+      te: {
+        title: `హైదరాబాద్‌లో విల్లు, ట్రస్టులు మరియు వారసత్వం | ${firm.name}`,
+        description:
+          "విల్లు, probate, letters of administration, succession certificate, వారసత్వ వివాదం మరియు family settlementపై హైదరాబాద్ సమాచారం.",
+      },
+    },
+  },
+  practiceHighCourt: {
+    path: "/practice/high-court",
+    copy: {
+      en: {
+        title: `Telangana High Court Practice | ${firm.name} Hyderabad`,
+        description:
+          "Telangana High Court information for writ petitions, criminal and civil revisions, quashing petitions, appeals and High Court bail.",
+      },
+      hi: {
+        title: `तेलंगाना हाई कोर्ट प्रैक्टिस | ${firm.name} हैदराबाद`,
+        description:
+          "writ petitions, criminal और civil revisions, quashing petitions, appeals और High Court bail पर तेलंगाना हाई कोर्ट जानकारी.",
+      },
+      te: {
+        title: `తెలంగాణ హైకోర్టు ప్రాక్టీస్ | ${firm.name} హైదరాబాద్`,
+        description:
+          "writ petitions, criminal మరియు civil revisions, quashing petitions, appeals మరియు High Court bailపై తెలంగాణ హైకోర్టు సమాచారం.",
+      },
+    },
+  },
+  about: {
+    path: "/about",
+    copy: {
+      en: {
+        title: `About Adv. Aitha Sunitha | ${firm.name} Hyderabad`,
+        description:
+          "A small practice, kept small on purpose. Founded 2023 in Kondapur, Hyderabad, by Adv. Aitha Sunitha, also known as Sunitha Sindhole.",
+      },
+      hi: {
+        title: `अधिवक्ता ऐथा सुनीता के बारे में | ${firm.name} हैदराबाद`,
+        description:
+          "अधिवक्ता ऐथा सुनीता और कोंडापुर, हैदराबाद में 2023 में स्थापित GS Law Firm की छोटी, एकल-अधिवक्ता प्रैक्टिस के बारे में जानकारी.",
+      },
+      te: {
+        title: `అడ్వ. ఐతా సునీత గురించి | ${firm.name} హైదరాబాద్`,
+        description:
+          "అడ్వ. ఐతా సునీత మరియు కొండాపూర్, హైదరాబాద్‌లో 2023లో స్థాపించిన GS Law Firm చిన్న, ఏకైక న్యాయవాది ప్రాక్టీస్ గురించి సమాచారం.",
+      },
+    },
+  },
+  contact: {
+    path: "/contact",
+    copy: {
+      en: {
+        title: `Contact ${firm.name} | Kondapur Hyderabad`,
+        description:
+          "Contact GS Law Firm by phone, email or confidential enquiry form from Kondapur, Hyderabad, serving Gachibowli, Miyapur, Nallagandla and nearby areas.",
+      },
+      hi: {
+        title: `${firm.name} से संपर्क करें | कोंडापुर हैदराबाद`,
+        description:
+          "कोंडापुर, हैदराबाद से GS Law Firm को फोन, ईमेल या गोपनीय पूछताछ फॉर्म के जरिए संपर्क करने की जानकारी.",
+      },
+      te: {
+        title: `${firm.name}ను సంప్రదించండి | కొండాపూర్ హైదరాబాద్`,
+        description:
+          "కొండాపూర్, హైదరాబాద్ నుండి GS Law Firmను ఫోన్, ఇమెయిల్ లేదా గోప్య విచారణ ఫారమ్ ద్వారా సంప్రదించే సమాచారం.",
+      },
+    },
+  },
+  kondapurLegalServices: {
+    path: "/kondapur-legal-services",
+    copy: {
+      en: {
+        title: `Kondapur Legal Services | ${firm.name} Hyderabad`,
+        description:
+          "Kondapur legal services information for GS Law Firm's office, nearby Hyderabad localities served, practice areas, and confidential enquiry path.",
+      },
+      hi: {
+        title: `कोंडापुर कानूनी सेवाएं | ${firm.name} हैदराबाद`,
+        description:
+          "GS Law Firm के कोंडापुर कार्यालय, नजदीकी हैदराबाद क्षेत्रों, प्रैक्टिस क्षेत्रों और गोपनीय पूछताछ के रास्ते की जानकारी.",
+      },
+      te: {
+        title: `కొండాపూర్ న్యాయ సేవలు | ${firm.name} హైదరాబాద్`,
+        description:
+          "GS Law Firm కొండాపూర్ కార్యాలయం, సమీప హైదరాబాద్ ప్రాంతాలు, ప్రాక్టీస్ రంగాలు మరియు గోప్య విచారణ మార్గం గురించి సమాచారం.",
+      },
+    },
+  },
+  legalStatisticsHyderabad: {
+    path: "/legal-statistics-hyderabad",
+    copy: {
+      en: {
+        title: `Legal Statistics for Hyderabad and Telangana | ${firm.name}`,
+        description:
+          "Court statistics, case-pendency data and legal-process context for Hyderabad and Telangana: cyber crime, property, consumer, cheque-bounce and criminal figures.",
+      },
+      hi: {
+        title: `हैदराबाद और तेलंगाना के लिए कानूनी आँकड़े | ${firm.name}`,
+        description:
+          "हैदराबाद और तेलंगाना के लिए न्यायालय आँकड़े, मामला-लंबितता और कानूनी प्रक्रिया संदर्भ: साइबर क्राइम, संपत्ति, उपभोक्ता, चेक बाउंस और आपराधिक मामले।",
+      },
+      te: {
+        title: `హైదరాబాద్ మరియు తెలంగాణ న్యాయ గణాంకాలు | ${firm.name}`,
+        description:
+          "హైదరాబాద్ మరియు తెలంగాణ కోర్టు గణాంకాలు, కేసు పెండింగ్ సమాచారం మరియు న్యాయ ప్రక్రియ సందర్భం: సైబర్ క్రైమ్, ఆస్తి, వినియోగదారు, చెక్ బౌన్స్ మరియు క్రిమినల్ వివరాలు.",
+      },
+    },
+  },
+  resourcesIndex: {
+    path: "/resources",
+    copy: {
+      en: {
+        title: `Legal Resources and Guides for Hyderabad | ${firm.name}`,
+        description:
+          "Plain-language legal guides and resources for people dealing with court matters, notices, property, contracts and criminal questions in Hyderabad, Telangana.",
+      },
+      hi: {
+        title: `हैदराबाद के लिए कानूनी संसाधन और गाइड | ${firm.name}`,
+        description:
+          "हैदराबाद, तेलंगाना में अदालत मामलों, नोटिस, संपत्ति, अनुबंध और आपराधिक प्रश्नों से जूझने वाले लोगों के लिए सरल-भाषा कानूनी गाइड और संसाधन.",
+      },
+      te: {
+        title: `హైదరాబాద్ కోసం న్యాయ వనరులు మరియు గైడ్‌లు | ${firm.name}`,
+        description:
+          "హైదరాబాద్, తెలంగాణలో కోర్టు విషయాలు, నోటీసులు, ఆస్తి, ఒప్పందాలు మరియు క్రిమినల్ ప్రశ్నలతో వ్యవహరించే వారికి సాదా-భాషా న్యాయ గైడ్‌లు మరియు వనరులు.",
+      },
+    },
+  },
+  resourceLegalNotice: {
+    path: "/resources/what-to-do-after-receiving-legal-notice-hyderabad",
+    copy: {
+      en: {
+        title: `Legal Notice Response Guide in Hyderabad | ${firm.name}`,
+        description:
+          "A checklist for responding to a legal notice in Hyderabad: verify the sender, review deadlines, gather documents and prepare a reply with an advocate.",
+      },
+      hi: {
+        title: `हैदराबाद में कानूनी नोटिस का जवाब | ${firm.name}`,
+        description:
+          "हैदराबाद में कानूनी नोटिस मिलने पर भेजने वाले की पहचान, समय सीमा और दस्तावेज जांचने तथा अधिवक्ता के साथ जवाब तैयार करने की जानकारी.",
+      },
+      te: {
+        title: `హైదరాబాద్‌లో లీగల్ నోటీసుకు జవాబు | ${firm.name}`,
+        description:
+          "హైదరాబాద్‌లో లీగల్ నోటీసు అందినప్పుడు పంపినవారి వివరాలు, గడువు, పత్రాలు పరిశీలించడం మరియు న్యాయవాదితో జవాబు సిద్ధం చేయడంపై సమాచారం.",
+      },
+    },
+  },
+  resourceBail: {
+    path: "/resources/understanding-bail-in-hyderabad-courts",
+    copy: {
+      en: {
+        title: `Bail Types and Court Guide in Hyderabad | ${firm.name}`,
+        description:
+          "Understand regular, anticipatory and interim bail in Hyderabad courts, including the application stages, documents, court jurisdiction and hearing process.",
+      },
+      hi: {
+        title: `हैदराबाद अदालतों में ज़मानत के प्रकार | ${firm.name}`,
+        description:
+          "हैदराबाद की अदालतों में नियमित, अग्रिम और अंतरिम ज़मानत के प्रकार, आवेदन के चरण, जरूरी दस्तावेज, अदालत के अधिकार क्षेत्र और सुनवाई की जानकारी.",
+      },
+      te: {
+        title: `హైదరాబాద్ కోర్టుల్లో బెయిల్ రకాలు | ${firm.name}`,
+        description:
+          "హైదరాబాద్ కోర్టుల్లో రెగ్యులర్, ముందస్తు మరియు మధ్యంతర బెయిల్ రకాలు, దరఖాస్తు దశలు, అవసరమైన పత్రాలు, కోర్టు పరిధి మరియు విచారణపై సమాచారం.",
+      },
+    },
+  },
+  resourcePropertyTitle: {
+    path: "/resources/property-title-verification-hyderabad",
+    copy: {
+      en: {
+        title: `Property Title Verification in Hyderabad | ${firm.name}`,
+        description:
+          "A guide to property title verification in Hyderabad: sale deeds, encumbrance certificates, revenue records, approvals and ownership issues before purchase.",
+      },
+      hi: {
+        title: `हैदराबाद में संपत्ति टाइटल की जांच | ${firm.name}`,
+        description:
+          "हैदराबाद में संपत्ति खरीदने से पहले बिक्री विलेख, भार प्रमाणपत्र, राजस्व रिकॉर्ड, मंजूरी और स्वामित्व संबंधी समस्याओं की जांच की जानकारी.",
+      },
+      te: {
+        title: `హైదరాబాద్‌లో ఆస్తి టైటిల్ పరిశీలన | ${firm.name}`,
+        description:
+          "హైదరాబాద్‌లో ఆస్తి కొనుగోలుకు ముందు అమ్మకపు పత్రాలు, ఎన్‌కంబరెన్స్ సర్టిఫికెట్, రెవెన్యూ రికార్డులు, అనుమతులు మరియు యాజమాన్య సమస్యల పరిశీలనపై సమాచారం.",
+      },
+    },
+  },
+  continuityOfCounsel: {
+    path: "/continuity-of-counsel",
+    copy: {
+      en: {
+        title: `Continuity of Counsel | ${firm.name} Hyderabad`,
+        description:
+          "Continuity-of-counsel explainer for GS Law Firm in Hyderabad: paper reading, hearing preparation, client communication and court-stage memory.",
+      },
+      hi: {
+        title: `काउंसल की निरंतरता | ${firm.name} हैदराबाद`,
+        description:
+          "हैदराबाद के GS Law Firm में कागज पढ़ने, सुनवाई की तैयारी, क्लाइंट संवाद और कोर्ट-स्टेज स्मृति पर काउंसल-निरंतरता की जानकारी.",
+      },
+      te: {
+        title: `కౌన్సెల్ నిరంతరత | ${firm.name} హైదరాబాద్`,
+        description:
+          "హైదరాబాద్‌లోని GS Law Firmలో పత్రాల చదువు, విచారణ సిద్ధత, క్లయింట్ సంభాషణ మరియు కోర్ట్-దశ జ్ఞాపకంపై కౌన్సెల్ నిరంతరత సమాచారం.",
+      },
+    },
+  },
+  bail: {
+    path: "/bail",
+    copy: {
+      en: {
+        title: `Bail Applications in Hyderabad | ${firm.name}`,
+        description:
+          "Information on regular bail, anticipatory bail, remand, surety paperwork and criminal-court appearances in Hyderabad, from GS Law Firm in Kondapur.",
+      },
+      hi: {
+        title: `हैदराबाद में ज़मानत आवेदन | ${firm.name}`,
+        description:
+          "हैदराबाद में नियमित ज़मानत, अग्रिम ज़मानत, रिमांड, जमानती कागज और आपराधिक अदालत उपस्थिति पर सामान्य जानकारी.",
+      },
+      te: {
+        title: `హైదరాబాద్‌లో బెయిల్ దరఖాస్తులు | ${firm.name}`,
+        description:
+          "హైదరాబాద్‌లో రెగ్యులర్ బెయిల్, ముందస్తు బెయిల్, రిమాండ్, ష్యూరిటీ పత్రాలు మరియు క్రిమినల్ కోర్టు హాజరుపై సమాచారం.",
+      },
+    },
+  },
+  criminalDefense: {
+    path: "/criminal-defense",
+    copy: {
+      en: {
+        title: `Criminal Defense in Hyderabad | ${firm.name}`,
+        description:
+          "Criminal-defense information for FIRs, complaints, bail stages, remand, trial dates and High Court steps in Hyderabad, from GS Law Firm in Kondapur.",
+      },
+      hi: {
+        title: `हैदराबाद में आपराधिक बचाव | ${firm.name}`,
+        description:
+          "हैदराबाद में FIR, शिकायत, ज़मानत चरण, रिमांड, ट्रायल तारीखों और हाई कोर्ट कदमों पर आपराधिक-बचाव जानकारी.",
+      },
+      te: {
+        title: `హైదరాబాద్‌లో క్రిమినల్ డిఫెన్స్ | ${firm.name}`,
+        description:
+          "హైదరాబాద్‌లో FIRలు, ఫిర్యాదులు, బెయిల్ దశలు, రిమాండ్, ట్రయల్ తేదీలు మరియు హైకోర్టు చర్యలపై క్రిమినల్ డిఫెన్స్ సమాచారం.",
+      },
+    },
+  },
+  propertyDisputes: {
+    path: "/property-disputes",
+    copy: {
+      en: {
+        title: `Property Disputes in Hyderabad | ${firm.name}`,
+        description:
+          "Property-dispute information for title, partition, tenancy, injunction and civil-court steps in Hyderabad, from GS Law Firm in Kondapur.",
+      },
+      hi: {
+        title: `हैदराबाद में संपत्ति विवाद | ${firm.name}`,
+        description:
+          "हैदराबाद में टाइटल, बंटवारा, किरायेदारी, injunction और दीवानी अदालत के चरणों पर संपत्ति-विवाद जानकारी.",
+      },
+      te: {
+        title: `హైదరాబాద్‌లో ఆస్తి వివాదాలు | ${firm.name}`,
+        description:
+          "హైదరాబాద్‌లో టైటిల్, పంచాయితీ, అద్దె, ఇంజంక్షన్ మరియు సివిల్ కోర్టు దశలపై ఆస్తి వివాద సమాచారం.",
+      },
+    },
+  },
+  commercialContracts: {
+    path: "/commercial-contracts",
+    copy: {
+      en: {
+        title: `Commercial Contracts in Hyderabad | ${firm.name}`,
+        description:
+          "Commercial-contract information for vendor, service, employment, contractor, founder, shareholder, NDA and dispute steps in Hyderabad.",
+      },
+      hi: {
+        title: `हैदराबाद में वाणिज्यिक अनुबंध | ${firm.name}`,
+        description:
+          "हैदराबाद में विक्रेता, सेवा, रोजगार, ठेकेदार, NDA, IP असाइनमेंट, नोटिस और व्यापार-विवाद दस्तावेजों पर जानकारी.",
+      },
+      te: {
+        title: `హైదరాబాద్‌లో వాణిజ్య ఒప్పందాలు | ${firm.name}`,
+        description:
+          "హైదరాబాద్‌లో విక్రేత, సేవ, ఉద్యోగ, కాంట్రాక్టర్, NDA, IP అసైన్‌మెంట్, నోటీసులు మరియు వ్యాపార వివాద పత్రాలపై సమాచారం.",
+      },
+    },
+  },
+  successionProbate: {
+    path: "/succession-probate",
+    copy: {
+      en: {
+        title: `Succession and Probate in Hyderabad | ${firm.name}`,
+        description:
+          "Succession and probate information for wills, letters of administration, succession papers, family settlements and inheritance disputes in Hyderabad.",
+      },
+      hi: {
+        title: `हैदराबाद में उत्तराधिकार और प्रोबेट | ${firm.name}`,
+        description:
+          "हैदराबाद में वसीयत, probate, letters of administration, उत्तराधिकार कागज, विरासत विवाद और पारिवारिक समझौता संदर्भ पर जानकारी.",
+      },
+      te: {
+        title: `హైదరాబాద్‌లో వారసత్వం మరియు ప్రొబేట్ | ${firm.name}`,
+        description:
+          "హైదరాబాద్‌లో విల్లు, ప్రొబేట్, letters of administration, వారసత్వ పత్రాలు, వారసత్వ వివాదాలు మరియు కుటుంబ ఒప్పంద సందర్భంపై సమాచారం.",
+      },
+    },
+  },
+  highCourtMatters: {
+    path: "/high-court-matters",
+    copy: {
+      en: {
+        title: `Telangana High Court Matters | ${firm.name} Hyderabad`,
+        description:
+          "High Court matter information for writ petitions, revisions, quashing petitions, second appeals and bail applications in Telangana.",
+      },
+      hi: {
+        title: `तेलंगाना हाई कोर्ट मामले | ${firm.name} हैदराबाद`,
+        description:
+          "तेलंगाना हाई कोर्ट में writ petition, revision, quashing, second appeal, bail और order review संदर्भ पर हैदराबाद की जानकारी.",
+      },
+      te: {
+        title: `తెలంగాణ హైకోర్టు విషయాలు | ${firm.name} హైదరాబాద్`,
+        description:
+          "తెలంగాణ హైకోర్టులో writ petition, revision, quashing, second appeal, bail మరియు order review సందర్భంపై హైదరాబాద్ సమాచారం.",
+      },
+    },
+  },
+  chequeDishonour: {
+    path: "/cheque-dishonour",
+    copy: {
+      en: {
+        title: `Cheque Dishonour in Hyderabad | ${firm.name}`,
+        description:
+          "Cheque-dishonour information for N.I. Act Section 138 notices, complaints, summons, evidence, settlement and appeal context in Hyderabad.",
+      },
+      hi: {
+        title: `हैदराबाद में चेक अनादर | ${firm.name}`,
+        description:
+          "N.I. Act Section 138 नोटिस, शिकायत, समन, साक्ष्य, समझौते और अपील संदर्भ पर हैदराबाद की चेक-अनादर जानकारी.",
+      },
+      te: {
+        title: `హైదరాబాద్‌లో చెక్ డిసానర్ | ${firm.name}`,
+        description:
+          "హైదరాబాద్‌లో N.I. Act Section 138 నోటీసులు, ఫిర్యాదులు, సమన్లు, సాక్ష్యం, రాజీ మరియు అప్పీల్ సందర్భంపై చెక్ డిసానర్ సమాచారం.",
+      },
+    },
+  },
+  tenancyEviction: {
+    path: "/tenancy-eviction",
+    copy: {
+      en: {
+        title: `Tenancy and Eviction in Hyderabad | ${firm.name}`,
+        description:
+          "Tenancy and eviction information for lease papers, notices, rent or possession disputes, interim relief, evidence and appeal context in Hyderabad.",
+      },
+      hi: {
+        title: `हैदराबाद में किरायेदारी और बेदखली | ${firm.name}`,
+        description:
+          "हैदराबाद में lease papers, नोटिस, किराया या कब्जा विवाद, injunction, evidence, execution, revision और appeal संदर्भ पर जानकारी.",
+      },
+      te: {
+        title: `హైదరాబాద్‌లో అద్దె మరియు ఎవిక్షన్ | ${firm.name}`,
+        description:
+          "హైదరాబాద్‌లో lease papers, నోటీసులు, అద్దె లేదా స్వాధీనం వివాదాలు, ఇంజంక్షన్, సాక్ష్యం, execution, revision మరియు appeal సందర్భంపై సమాచారం.",
+      },
+    },
+  },
+  specificPerformance: {
+    path: "/specific-performance",
+    copy: {
+      en: {
+        title: `Specific Performance in Hyderabad | ${firm.name}`,
+        description:
+          "Specific-performance information for sale agreements, business-contract obligations, notices, pleadings, interim relief and execution in Hyderabad.",
+      },
+      hi: {
+        title: `हैदराबाद में समझौते का विशिष्ट पालन | ${firm.name}`,
+        description:
+          "हैदराबाद में sale agreement, संपत्ति या व्यापार contract, नोटिस, interim relief, evidence, execution और appeal संदर्भ पर जानकारी.",
+      },
+      te: {
+        title: `హైదరాబాద్‌లో ఒప్పంద నిర్దిష్ట అమలు | ${firm.name}`,
+        description:
+          "హైదరాబాద్‌లో sale agreement, ఆస్తి లేదా business contract, నోటీసులు, interim relief, evidence, execution మరియు appeal సందర్భంపై సమాచారం.",
+      },
+    },
+  },
+  injunctionInterimRelief: {
+    path: "/injunction-interim-relief",
+    copy: {
+      en: {
+        title: `Injunction and Interim Relief in Hyderabad | ${firm.name}`,
+        description:
+          "Injunction and interim-relief information for possession, title, tenancy, contract restraint, notices, pleadings and urgency in Hyderabad.",
+      },
+      hi: {
+        title: `हैदराबाद में निषेधाज्ञा और अंतरिम राहत | ${firm.name}`,
+        description:
+          "हैदराबाद में कब्जा, title, tenancy, contract restraint, documents, urgency और civil-court interim relief पर जानकारी.",
+      },
+      te: {
+        title: `హైదరాబాద్‌లో ఇంజంక్షన్, మధ్యంతర రక్షణ | ${firm.name}`,
+        description:
+          "హైదరాబాద్‌లో స్వాధీనం, title, tenancy, contract restraint, పత్రాలు, urgency మరియు civil-court interim relief పై సమాచారం.",
+      },
+    },
+  },
+  consumerForumComplaints: {
+    path: "/consumer-forum-complaints",
+    copy: {
+      en: {
+        title: `Consumer Forum Complaints in Hyderabad | ${firm.name}`,
+        description:
+          "Consumer-forum complaint information for defective goods, service deficiency, refund issues, builder records, notices, evidence and orders in Hyderabad.",
+      },
+      hi: {
+        title: `हैदराबाद में उपभोक्ता शिकायतें | ${firm.name}`,
+        description:
+          "हैदराबाद में खराब goods, service deficiency, refund, builder records, notices, evidence और orders पर consumer-forum complaint जानकारी.",
+      },
+      te: {
+        title: `హైదరాబాద్‌లో వినియోగదారుల ఫిర్యాదులు | ${firm.name}`,
+        description:
+          "హైదరాబాద్‌లో defective goods, service deficiency, refund, builder records, notices, evidence మరియు ordersపై consumer-forum complaint సమాచారం.",
+      },
+    },
+  },
+  cyberCrimeComplaints: {
+    path: "/cyber-crime-complaints",
+    copy: {
+      en: {
+        title: `Cyber Crime Complaints in Hyderabad | ${firm.name}`,
+        description:
+          "Cyber-crime complaint information for online fraud, account misuse, harassment messages, transaction records, FIR and notice context in Hyderabad.",
+      },
+      hi: {
+        title: `हैदराबाद में साइबर अपराध की शिकायतें | ${firm.name}`,
+        description:
+          "हैदराबाद में online fraud, account misuse, harassment messages, complaint or FIR steps और digital evidence records पर cyber-crime जानकारी.",
+      },
+      te: {
+        title: `హైదరాబాద్‌లో సైబర్ నేర ఫిర్యాదులు | ${firm.name}`,
+        description:
+          "హైదరాబాద్‌లో online fraud, account misuse, harassment messages, complaint or FIR steps మరియు digital evidence records పై cyber-crime సమాచారం.",
+      },
+    },
+  },
+  cyberCrimeComplaintFormat: {
+    path: "/cyber-crime-complaint-format",
+    copy: {
+      en: {
+        title: `Cyber Crime Complaint Format Guide | ${firm.name} Hyderabad`,
+        description:
+          "Cyber crime complaint format for Hyderabad: chronology, identifiers, transaction details, evidence checklist and official reporting routes in India.",
+      },
+      hi: {
+        title: `साइबर क्राइम शिकायत का प्रारूप | ${firm.name} हैदराबाद`,
+        description:
+          "हैदराबाद के लिए साइबर क्राइम शिकायत प्रारूप: समयक्रम, identifiers, transaction details, evidence checklist और भारत के official reporting routes.",
+      },
+      te: {
+        title: `సైబర్ క్రైమ్ ఫిర్యాదు ఫార్మాట్ | ${firm.name} హైదరాబాద్`,
+        description:
+          "హైదరాబాద్ కోసం సైబర్ క్రైమ్ ఫిర్యాదు ఫార్మాట్: కాలక్రమం, identifiers, transaction details, evidence checklist మరియు official reporting routes.",
+      },
+    },
+  },
+  legalNotices: {
+    path: "/legal-notices",
+    copy: {
+      en: {
+        title: `Legal Notices and Replies in Hyderabad | ${firm.name}`,
+        description:
+          "Legal-notice and reply information for property, contract, tenancy, injunction, specific-performance and civil-suit context in Hyderabad.",
+      },
+      hi: {
+        title: `हैदराबाद में कानूनी नोटिस और जवाब | ${firm.name}`,
+        description:
+          "हैदराबाद में legal notices, replies, deadlines, documents, civil suit context और property, contract, tenancy overlap पर जानकारी.",
+      },
+      te: {
+        title: `హైదరాబాద్‌లో న్యాయ నోటీసులు, సమాధానాలు | ${firm.name}`,
+        description:
+          "హైదరాబాద్‌లో legal notices, replies, deadlines, documents, civil suit context మరియు property, contract, tenancy overlap పై సమాచారం.",
+      },
+    },
+  },
+  legalNoticeReplyFormat: {
+    path: "/legal-notice-reply-format",
+    copy: {
+      en: {
+        title: `Legal Notice Reply Format Guide | ${firm.name} Hyderabad`,
+        description:
+          "Legal notice reply format guide for Hyderabad: structure, documents, chronology, deadlines and why a generic Word template may be risky.",
+      },
+      hi: {
+        title: `कानूनी नोटिस जवाब का प्रारूप | ${firm.name} हैदराबाद`,
+        description:
+          "हैदराबाद के लिए कानूनी नोटिस जवाब प्रारूप: संरचना, दस्तावेज, समयक्रम, समय-सीमा और सामान्य Word template की सीमाएं.",
+      },
+      te: {
+        title: `లీగల్ నోటీసు జవాబు ఫార్మాట్ | ${firm.name} హైదరాబాద్`,
+        description:
+          "హైదరాబాద్ కోసం లీగల్ నోటీసు జవాబు ఫార్మాట్: నిర్మాణం, పత్రాలు, కాలక్రమం, గడువులు మరియు సాధారణ Word template పరిమితులు.",
+      },
+    },
+  },
+  bailHearingProcedure: {
+    path: "/bail-hearing-procedure-hyderabad",
+    copy: {
+      en: {
+        title: `Bail Hearing Procedure in Hyderabad | ${firm.name}`,
+        description:
+          "General information on bail hearing procedure in Hyderabad: FIR or complaint papers, remand stage, surety context, court dates and order conditions.",
+      },
+      hi: {
+        title: `हैदराबाद में ज़मानत सुनवाई प्रक्रिया | ${firm.name}`,
+        description:
+          "हैदराबाद में ज़मानत सुनवाई प्रक्रिया पर सामान्य जानकारी: FIR या शिकायत कागज, रिमांड चरण, जमानती संदर्भ, कोर्ट तारीखें और शर्तें.",
+      },
+      te: {
+        title: `హైదరాబాద్‌లో బెయిల్ విచారణ ప్రక్రియ | ${firm.name}`,
+        description:
+          "హైదరాబాద్‌లో బెయిల్ విచారణ ప్రక్రియపై సాధారణ సమాచారం: FIR లేదా ఫిర్యాదు పత్రాలు, రిమాండ్ దశ, ష్యూరిటీ, కోర్టు తేదీలు మరియు ఆర్డర్ షరతులు.",
+      },
+    },
+  },
+  propertyDisputeCourts: {
+    path: "/property-dispute-courts-telangana",
+    copy: {
+      en: {
+        title: `Property Dispute Courts in Telangana | ${firm.name}`,
+        description:
+          "Property-dispute court information for Hyderabad and Telangana: documents, possession, injunctions, tenancy, specific performance and later steps.",
+      },
+      hi: {
+        title: `तेलंगाना में संपत्ति विवाद अदालतें | ${firm.name}`,
+        description:
+          "हैदराबाद और तेलंगाना में संपत्ति-विवाद अदालत जानकारी: दस्तावेज, कब्जा, injunction, किरायेदारी, समझौते का विशिष्ट पालन और आगे के चरण.",
+      },
+      te: {
+        title: `తెలంగాణలో ఆస్తి వివాద కోర్టులు | ${firm.name}`,
+        description:
+          "హైదరాబాద్ మరియు తెలంగాణలో ఆస్తి వివాద కోర్టు సమాచారం: పత్రాలు, స్వాధీనం, ఇంజంక్షన్, అద్దె, స్పెసిఫిక్ పర్ఫార్మెన్స్ మరియు తదుపరి దశలు.",
+      },
+    },
+  },
+  chequeBounceProcedure: {
+    path: "/cheque-bounce-case-procedure-hyderabad",
+    copy: {
+      en: {
+        title: `Cheque Bounce Case Procedure in Hyderabad | ${firm.name}`,
+        description:
+          "Cheque bounce case procedure information for Hyderabad: legal notice, payment-window context, complaint filing, summons, evidence and hearings.",
+      },
+      hi: {
+        title: `हैदराबाद में चेक बाउंस केस प्रक्रिया | ${firm.name}`,
+        description:
+          "हैदराबाद में चेक बाउंस केस प्रक्रिया: लीगल नोटिस, भुगतान-खिड़की, शिकायत दाखिल, समन, साक्ष्य और सुनवाई.",
+      },
+      te: {
+        title: `హైదరాబాద్‌లో చెక్ బౌన్స్ కేసు ప్రక్రియ | ${firm.name}`,
+        description:
+          "హైదరాబాద్‌లో చెక్ బౌన్స్ కేసు ప్రక్రియ: లీగల్ నోటీసు, చెల్లింపు గడువు, ఫిర్యాదు దాఖలు, సమన్లు, సాక్ష్యం మరియు విచారణలు.",
+      },
+    },
+  },
+  privacy: {
+    path: "/privacy",
+    copy: {
+      en: {
+        title: `Privacy Notice | ${firm.name} Hyderabad`,
+        description:
+          "Privacy notice for the GS Law Firm website in Hyderabad: enquiry data collected, why it is used, how long it is kept and how to request access.",
+      },
+      hi: {
+        title: `गोपनीयता सूचना | ${firm.name} हैदराबाद`,
+        description:
+          "हैदराबाद में GS Law Firm की वेबसाइट के लिए गोपनीयता सूचना: पूछताछ का कौन-सा डेटा लिया जाता है, उसका उपयोग, रखने की अवधि और उस तक पहुंच.",
+      },
+      te: {
+        title: `గోప్యతా నోటీసు | ${firm.name} హైదరాబాద్`,
+        description:
+          "హైదరాబాద్‌లో GS Law Firm వెబ్‌సైట్ గోప్యతా సమాచారం: విచారణలో సేకరించే డేటా, దాని వినియోగం, నిల్వ కాలం మరియు దాన్ని చూడమని కోరే విధానం.",
+      },
+    },
+  },
+  disclaimer: {
+    path: "/disclaimer",
+    copy: {
+      en: {
+        title: `BCI Disclaimer Explained | ${firm.name} Hyderabad`,
+        description:
+          "Bar Council of India disclaimer explained for GS Law Firm in Hyderabad: what the website can explain, its limits and the confidential enquiry boundary.",
+      },
+      hi: {
+        title: `BCI अस्वीकरण की जानकारी | ${firm.name} हैदराबाद`,
+        description:
+          "हैदराबाद में GS Law Firm के लिए Bar Council of India अस्वीकरण की जानकारी: वेबसाइट क्या समझा सकती है, उसकी सीमाएं और गोपनीय पूछताछ की सीमा.",
+      },
+      te: {
+        title: `BCI నిరాకరణ వివరణ | ${firm.name} హైదరాబాద్`,
+        description:
+          "హైదరాబాద్‌లో GS Law Firm కోసం Bar Council of India నిరాకరణ వివరణ: వెబ్‌సైట్ వివరించగల సమాచారం, దాని పరిమితులు మరియు గోప్య విచారణ హద్దు.",
+      },
+    },
+  },
+} satisfies Record<string, MetadataEntry>;
+
+export type LocalizedPageKey = keyof typeof localizedMetadata;
+
+const practiceDetailMetadataKeys = {
+  criminal: "practiceCriminal",
+  civil: "practiceCivil",
+  corporate: "practiceCorporate",
+  "will-succession": "practiceWillSuccession",
+  "high-court": "practiceHighCourt",
+} satisfies Record<PracticeSlug, LocalizedPageKey>;
+
+const resourceMetadataKeys: Record<string, LocalizedPageKey | undefined> = {
+  "what-to-do-after-receiving-legal-notice-hyderabad": "resourceLegalNotice",
+  "understanding-bail-in-hyderabad-courts": "resourceBail",
+  "property-title-verification-hyderabad": "resourcePropertyTitle",
+};
+
+export function localizedResourceMetadata(slug: string, locale: string): Metadata {
+  const key = Object.hasOwn(resourceMetadataKeys, slug)
+    ? resourceMetadataKeys[slug]
+    : undefined;
+  if (!key) throw new Error(`Missing localized metadata for resource: ${slug}`);
+  return localizedPageMetadata(key, locale);
+}
+
+function safeLocale(locale: string): Locale {
+  return (routing.locales as readonly string[]).includes(locale)
+    ? (locale as Locale)
+    : routing.defaultLocale;
+}
+
+export function localizedPageMetadata(
+  key: LocalizedPageKey,
+  locale: string,
+): Metadata {
+  const entry = localizedMetadata[key];
+  const resolvedLocale = safeLocale(locale);
+  const copy = entry.copy[resolvedLocale];
+  return pageMetadata({
+    title: copy.title,
+    description: copy.description,
+    path: entry.path,
+    locale: resolvedLocale,
+  });
+}
+
+export function localizedPageHeading(
+  key: LocalizedPageKey,
+  locale: string,
+): string {
+  const resolvedLocale = safeLocale(locale);
+  const title = localizedMetadata[key].copy[resolvedLocale].title;
+  const heading = title.split("|")[0]?.trim() ?? title.trim();
+
+  const hasLocalReference = {
+    en: /Hyderabad|Kondapur|Telangana/i,
+    hi: /हैदराबाद|कोंडापुर|तेलंगाना/i,
+    te: /హైదరాబాద్|కొండాపూర్|తెలంగాణ/i,
+  }[resolvedLocale].test(heading);
+
+  if (hasLocalReference) return `${heading}.`;
+
+  if (resolvedLocale === "hi") return `हैदराबाद में ${heading}।`;
+  if (resolvedLocale === "te") return `హైదరాబాద్‌లో ${heading}.`;
+  return `${heading} in Hyderabad.`;
+}
+
+export function localizedPracticeMetadata(
+  slug: PracticeSlug,
+  locale: string,
+): Metadata {
+  return localizedPageMetadata(practiceDetailMetadataKeys[slug], locale);
+}
+
+export function localizedPracticeHeading(
+  slug: PracticeSlug,
+  locale: string,
+): string {
+  return localizedPageHeading(practiceDetailMetadataKeys[slug], locale);
+}
+
+export function localizedMetadataAuditRows() {
+  return Object.entries(localizedMetadata).flatMap(([key, entry]) =>
+    routing.locales.map((locale) => ({
+      key,
+      locale,
+      title: entry.copy[locale].title,
+      titleLength: entry.copy[locale].title.length,
+      description: entry.copy[locale].description,
+      descriptionLength: entry.copy[locale].description.length,
+      path: entry.path,
+    })),
+  );
+}
